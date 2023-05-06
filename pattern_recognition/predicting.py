@@ -1,4 +1,4 @@
-#основано на функциях из гитхаба
+# основано на функциях из гитхаба
 # https://github.com/SheezaShabbir/Time-series-Analysis-using-LSTM-RNN-and-GRU
 
 import numpy as np
@@ -14,6 +14,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
+
 # Создаем необходимые переменные
 def Create_Dataloaders(
         cluster: int,
@@ -25,7 +26,7 @@ def Create_Dataloaders(
         test_set: float,
         val_set: float,
         seed: int = 0,
-    ) -> None:
+) -> None:
 
     global batch_size
     global train_loader
@@ -38,25 +39,29 @@ def Create_Dataloaders(
     # отделяем датасет с кластером
     nn_df = data_stand[y_pred_cl == cluster].reset_index(drop=True)
     # отделяем тест перед бутстрэпом, т.к. в тесте не должно быть повторов
-    nn_df, df_test = train_test_split(np.array(nn_df), test_size=test, random_state=seed)
+    nn_df, df_test = train_test_split(np.array(nn_df), test_size=test,
+                                      random_state=seed)
     nn_df = pd.DataFrame(nn_df).reset_index(drop=True)
     df_test = pd.DataFrame(df_test).reset_index(drop=True)
 
     # bootstrap part
     np.random.seed(0)
     # набираем индексы с возвращением чтобы увеличить выборку
-    lst = np.random.choice(range(len(nn_df)), len(nn_df)*bootstrap_times, replace = True)
+    lst = np.random.choice(range(len(nn_df)), len(nn_df) * bootstrap_times,
+                           replace=True)
     # увеличиваем выборку
-    nn_df = nn_df.iloc[lst,:].reset_index(drop=True)
+    nn_df = nn_df.iloc[lst, :].reset_index(drop=True)
 
     # splitting the data into test, validation, and train sets
     X_train, y_train = np.array(nn_df.iloc[:, :-predict_period]), \
-                            np.array(nn_df.iloc[:, -predict_period:])
-    X, y = np.array(df_test.iloc[:, :-predict_period]), np.array(df_test.iloc[:, -predict_period:])
+        np.array(nn_df.iloc[:, -predict_period:])
+    X, y = np.array(df_test.iloc[:, :-predict_period]), \
+        np.array(df_test.iloc[:, -predict_period:])
 
     # validation - for training, test - for final quality evaluation
     X_val, X_test, y_val, y_test = train_test_split(X, y,
-                                                    test_size=test_set/test, random_state=seed)
+                                                    test_size=test_set / test,
+                                                    random_state=seed)
 
     # loading the data into DataLoaders
     train_features = torch.Tensor(X_train)
@@ -70,40 +75,48 @@ def Create_Dataloaders(
     val = TensorDataset(val_features, val_targets)
     test = TensorDataset(test_features, test_targets)
 
-    train_loader = DataLoader(train, batch_size=batch_size, shuffle=False, drop_last=True)
-    val_loader = DataLoader(val, batch_size=batch_size, shuffle=False, drop_last=True)
-    test_loader_one = DataLoader(test, batch_size=1, shuffle=False, drop_last=True)
+    train_loader = DataLoader(train, batch_size=batch_size,
+                              shuffle=False, drop_last=True)
+    val_loader = DataLoader(val, batch_size=batch_size,
+                            shuffle=False, drop_last=True)
+    test_loader_one = DataLoader(test, batch_size=1,
+                                 shuffle=False, drop_last=True)
 
     # plot samples for manual check
-    x_lim = X_train.shape[1]+y_train.shape[1]
+    x_lim = X_train.shape[1] + y_train.shape[1]
 
     plt.figure(figsize=(10, 4))
     for i in range(X_train.shape[0]):
-        label='_nolegend_' if i!=1 else 'train sample'
+        label = '_nolegend_' if i! = 1 else 'train sample'
         plt.plot(pd.concat([pd.DataFrame(X_train[i]),
-                            pd.DataFrame(y_train[i])],axis=0).reset_index(drop=True),
-                            "-", alpha=0.2, c='b', label=label)
+                            pd.DataFrame(y_train[i])],
+                           axis=0).reset_index(drop=True),
+                 "-", alpha=0.2, c='b', label=label)
     plt.xlim(0, x_lim)
     plt.ylim(-4, 4)
-    plt.axvline(x = X_train.shape[1], color='r', linestyle="--", label = 'prediction horizon')
+    plt.axvline(x=X_train.shape[1], color='r',
+                linestyle="--", label='prediction horizon')
     plt.title('training set')
     plt.legend(loc='upper left')
     plt.show()
 
     plt.figure(figsize=(10, 4))
     for i in range(X_test.shape[0]):
-        label='_nolegend_' if i!=1 else 'test sample'
+        label = '_nolegend_' if i != 1 else 'test sample'
         plt.plot(pd.concat([pd.DataFrame(X_test[i]),
-                            pd.DataFrame(y_test[i])],axis=0).reset_index(drop=True),
-                            "-", alpha=0.2, c='c', label=label)
+                            pd.DataFrame(y_test[i])],
+                           axis=0).reset_index(drop=True),
+                 "-", alpha=0.2, c='c', label=label)
     for i in range(X_val.shape[0]):
-        label='_nolegend_' if i!=1 else 'validation sample'
+        label = '_nolegend_' if i != 1 else 'validation sample'
         plt.plot(pd.concat([pd.DataFrame(X_val[i]),
-                            pd.DataFrame(y_val[i])],axis=0).reset_index(drop=True),
-                            "-", alpha=0.2, c='m', label=label)
+                            pd.DataFrame(y_val[i])],
+                           axis=0).reset_index(drop=True),
+                 "-", alpha=0.2, c='m', label=label)
     plt.xlim(0, x_lim)
     plt.ylim(-4, 4)
-    plt.axvline(x = X_test.shape[1], color='r', linestyle="--", label = 'prediction horizon')
+    plt.axvline(x=X_test.shape[1], color='r',
+                linestyle="--", label='prediction horizon')
     plt.title('testing set')
     plt.legend(loc='upper left')
     plt.show()
@@ -111,24 +124,28 @@ def Create_Dataloaders(
 
 # LSTM model class
 class LSTMModel(nn.Module):
-    """LSTMModel class extends nn.Module class and works as a constructor for LSTMs.
+    """LSTMModel class extends nn.Module class and works
+        as a constructor for LSTMs.
 
-       LSTMModel class initiates a LSTM module based on PyTorch's nn.Module class.
-       It has only two methods, namely init() and forward(). While the init()
-       method initiates the model with the given input parameters, the forward()
-       method defines how the forward propagation needs to be calculated.
-       Since PyTorch automatically defines back propagation, there is no need
-       to define back propagation method.
+       LSTMModel class initiates a LSTM module based on PyTorch's
+       nn.Module class. It has only two methods, namely init()
+       and forward(). While the init() method initiates the model
+       with the given input parameters, the forward() method defines
+       how the forward propagation needs to be calculated.
+       Since PyTorch automatically defines back propagation,
+       there is no need to define back propagation method.
 
        Attributes:
            hidden_dim (int): The number of nodes in each layer
            layer_dim (str): The number of layers in the network
-           lstm (nn.LSTM): The LSTM model constructed with the input parameters.
+           lstm (nn.LSTM): The LSTM model constructed with
+                the input parameters.
            fc (nn.Linear): The fully connected layer to convert the final state
                            of LSTMs to our desired output shape.
 
     """
-    def __init__(self, input_dim, hidden_dim, layer_dim, output_dim, dropout_prob):
+    def __init__(self, input_dim, hidden_dim,
+                 layer_dim, output_dim, dropout_prob):
         """The __init__ method that initiates a LSTM instance.
 
         Args:
@@ -147,7 +164,8 @@ class LSTMModel(nn.Module):
 
         # LSTM layers
         self.lstm = nn.LSTM(
-            input_dim, hidden_dim, layer_dim, batch_first=True, dropout=dropout_prob
+            input_dim, hidden_dim, layer_dim,
+            batch_first=True, dropout=dropout_prob
         )
 
         # Fully connected layer
@@ -157,30 +175,35 @@ class LSTMModel(nn.Module):
         """The forward method takes input tensor x and does forward propagation
 
         Args:
-            x (torch.Tensor): The input tensor of the shape (batch size, sequence length, input_dim)
+            x (torch.Tensor): The input tensor of the shape
+                (batch size, sequence length, input_dim)
 
         Returns:
-            torch.Tensor: The output tensor of the shape (batch size, output_dim)
+            torch.Tensor: The output tensor of the shape
+                (batch size, output_dim)
 
         """
         # Initializing hidden state for first input with zeros
-        h0 = torch.zeros(self.layer_dim, x.size(0), 
+        h0 = torch.zeros(self.layer_dim, x.size(0),
                          self.hidden_dim, device=x.device).requires_grad_()
 
         # Initializing cell state for first input with zeros
-        c0 = torch.zeros(self.layer_dim, x.size(0), 
+        c0 = torch.zeros(self.layer_dim, x.size(0),
                          self.hidden_dim, device=x.device).requires_grad_()
 
-        # We need to detach as we are doing truncated backpropagation through time (BPTT)
-        # If we dont, we'll backprop all the way to the start even after going through another batch
-        # Forward propagation by passing in the input, hidden state, and cell state into the model
+        # We need to detach as we are doing truncated backpropagation through
+        # time (BPTT). If we dont, we'll backprop all the way to the start
+        # even after going through another batch forward propagation by
+        # passing in the input, hidden state, and cell state into the model.
         out, (hn, cn) = self.lstm(x, (h0.detach(), c0.detach()))
 
-        # Reshaping the outputs in the shape of (batch_size, seq_length, hidden_size)
+        # Reshaping the outputs in the shape of
+        # (batch_size, seq_length, hidden_size)
         # so that it can fit into the fully connected layer
         out = out[:, -1, :]
 
-        # Convert the final state to our desired output shape (batch_size, output_dim)
+        # Convert the final state to our desired output shape
+        # (batch_size, output_dim)
         out = self.fc(out)
 
         return out
@@ -188,17 +211,19 @@ class LSTMModel(nn.Module):
 
 # Training class
 class Optimization:
-    """Optimization is a helper class that allows training, validation, prediction.
+    """Optimization is a helper class that allows training,
+        validation, prediction.
 
-    Optimization is a helper class that takes model, loss function, optimizer function
-    learning scheduler (optional), early stopping (optional) as inputs. In return, it
-    provides a framework to train and validate the models, and to predict future values
-    based on the models.
+    Optimization is a helper class that takes model, loss function,
+    optimizer function learning scheduler (optional), early stopping (optional)
+    as inputs. In return, it provides a framework to train and validate
+    the models, and to predict future values based on the models.
 
     Attributes:
         model (LSTMModel): Model class created for the type of RNN
         loss_fn (torch.nn.modules.Loss): Loss function to calculate the losses
-        optimizer (torch.optim.Optimizer): Optimizer function to optimize the loss function
+        optimizer (torch.optim.Optimizer): Optimizer function to optimize
+            the loss function
         train_losses (list[float]): The loss values from the training
         val_losses (list[float]): The loss values from the validation
         last_epoch (int): The number of epochs that the models is trained
@@ -207,21 +232,25 @@ class Optimization:
         """
         Args:
             model (LSTMModel): Model class created for the type of RNN
-            loss_fn (torch.nn.modules.Loss): Loss function to calculate the losses
-            optimizer (torch.optim.Optimizer): Optimizer function to optimize the loss function
+            loss_fn (torch.nn.modules.Loss): Loss function to calculate
+                the losses
+            optimizer (torch.optim.Optimizer): Optimizer function to optimize
+                the loss function
         """
         self.model = model
         self.loss_fn = loss_fn
         self.optimizer = optimizer
         self.train_losses = []
         self.val_losses = []
+
     def train_step(self, x, y):
         """The method train_step completes one step of training.
 
-        Given the features (x) and the target values (y) tensors, the method completes
-        one step of the training. First, it activates the train mode to enable back prop.
-        After generating predicted values (yhat) by doing forward propagation, it calculates
-        the losses by using the loss function. Then, it computes the gradients by doing
+        Given the features (x) and the target values (y) tensors, the method
+        completes one step of the training. First, it activates the train mode
+        to enable back prop. After generating predicted values (yhat) by doing
+        forward propagation, it calculates the losses by using
+        the loss function. Then, it computes the gradients by doing
         back propagation and updates the weights by calling step() function.
 
         Args:
@@ -248,25 +277,30 @@ class Optimization:
         # Returns the loss
         return loss.item()
 
-    def train(self, train_loader, val_loader, batch_size=50, n_epochs=50, n_features=30):
+    def train(self, train_loader, val_loader,
+              batch_size=50, n_epochs=50, n_features=30):
         """The method train performs the model training
 
-        The method takes DataLoaders for training and validation datasets, batch size for
-        mini-batch training, number of epochs to train, and number of features as inputs.
-        Then, it carries out the training by iteratively calling the method train_step for
-        n_epochs times. If early stopping is enabled, then it  checks the stopping condition
-        to decide whether the training needs to halt before n_epochs steps. Finally, it saves
-        the model in a designated file path.
+        The method takes DataLoaders for training and validation datasets,
+        batch size for mini-batch training, number of epochs to train,
+        and number of features as inputs. Then, it carries out the training
+        by iteratively calling the method train_step for n_epochs times.
+        If early stopping is enabled, then it checks the stopping condition
+        to decide whether the training needs to halt before n_epochs steps.
+        Finally, it saves the model in a designated file path.
 
         Args:
-            train_loader (torch.utils.data.DataLoader): DataLoader that stores training data
-            val_loader (torch.utils.data.DataLoader): DataLoader that stores validation data
+            train_loader (torch.utils.data.DataLoader): DataLoader that
+                stores training data
+            val_loader (torch.utils.data.DataLoader): DataLoader that
+                stores validation data
             batch_size (int): Batch size for mini-batch training
             n_epochs (int): Number of epochs, i.e., train steps, to train
             n_features (int): Number of feature columns
 
         """
-        #model_path = f'{self.model}_{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}'
+        # model_path = f'{self.model}_' +
+        # f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}'
 
         for epoch in range(1, n_epochs + 1):
             batch_losses = []
@@ -295,24 +329,28 @@ class Optimization:
 
             if (epoch <= 10) | (epoch % 10 == 0):
                 print(
-                    f"[{epoch}/{n_epochs}] Training loss: {training_loss:.4f}\t"+ \
-                        f"Validation loss: {validation_loss:.4f}"
+                    f"[{epoch} / {n_epochs}] Training loss: "
+                    + f"{training_loss:.4f}\tValidation loss: "
+                    + f"{validation_loss:.4f}"
                 )
 
     def evaluate(self, test_loader, batch_size=1, n_features=1):
         """The method evaluate performs the model evaluation
 
-        The method takes DataLoaders for the test dataset, batch size for mini-batch testing,
-        and number of features as inputs. Similar to the model validation, it iteratively
-        predicts the target values and calculates losses. Then, it returns two lists that
-        hold the predictions and the actual values.
+        The method takes DataLoaders for the test dataset, batch size for
+        mini-batch testing, and number of features as inputs. Similar to
+        the model validation, it iteratively predicts the target values
+        and calculates losses. Then, it returns two lists that hold
+        the predictions and the actual values.
 
         Note:
-            This method assumes that the prediction from the previous step is available at
-            the time of the prediction, and only does one-step prediction into the future.
+            This method assumes that the prediction from the previous step
+            is available at the time of the prediction, and only does
+            one-step prediction into the future.
 
         Args:
-            test_loader (torch.utils.data.DataLoader): DataLoader that stores test data
+            test_loader (torch.utils.data.DataLoader): DataLoader
+                that stores test data
             batch_size (int): Batch size for mini-batch training
             n_features (int): Number of feature columns
 
@@ -329,18 +367,19 @@ class Optimization:
                 y_test = y_test.to(device)
                 self.model.eval()
                 yhat = self.model(x_test)
-                yhat=yhat.cpu().data.numpy()
+                yhat = yhat.cpu().data.numpy()
                 predictions.append(yhat)
-                y_test=y_test.cpu().data.numpy()
+                y_test = y_test.cpu().data.numpy()
                 values.append(y_test)
 
         return predictions, values
 
     def plot_losses(self):
-        """The method plots the calculated loss values for training and validation
+        """The method plots the calculated loss values for
+            training and validation
         """
         plt.style.use('ggplot')
-        plt.figure(figsize=(10,5))
+        plt.figure(figsize=(10, 5))
         plt.plot(self.train_losses, label="Training loss")
         plt.plot(self.val_losses, label="Validation loss")
         plt.legend()
@@ -369,15 +408,18 @@ def General_Settings(
                     'dropout_prob' : dropout}
     model = get_model(model_name, model_params)
     loss_fn = nn.MSELoss(reduction="mean")
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate,
+                           weight_decay=weight_decay)
 
-    opt = Optimization(model=model.to(device), loss_fn=loss_fn, optimizer=optimizer)
-    opt.train(train_loader, val_loader, batch_size=batch_size, 
+    opt = Optimization(model=model.to(device), loss_fn=loss_fn,
+                       optimizer=optimizer)
+    opt.train(train_loader, val_loader, batch_size=batch_size,
               n_epochs=n_epochs, n_features=input_dim)
     opt.plot_losses()
     model_dict = opt.model.state_dict()
 
-    # за счет использования batch_size=1 - получается использовать в тесте все элементы.
+    # за счет использования batch_size=1 -
+    # получается использовать в тесте все элементы.
     predictions, values = opt.evaluate(
         test_loader_one,
         batch_size=1,
@@ -404,18 +446,25 @@ def format_predictions(predictions, values, df_test, scaler):
     vals = np.concatenate(values, axis=0).ravel()
     preds = np.concatenate(predictions, axis=0).ravel()
     df_result = pd.DataFrame(data={"value": vals, "prediction": preds})
-    #df_result = inverse_transform(scaler, df_result, [["value", "prediction"]])
+    # df_result = inverse_transform(
+    # scaler, df_result, [["value", "prediction"]])
     return df_result
 
 
 # error metrics
 def Quality_Check(predictions, y_test):
-    print('avg R2: %.2f, avg MSE: %.2f'% \
-          tuple(np.mean(pd.DataFrame([[r2_score(y_true[0], y_predict[0]), \
-            mean_squared_error(y_true[0], y_predict[0])] for (y_true, y_predict) \
-            in zip(y_test, predictions)]),axis=0)))
+    print('avg R2: %.2f, avg MSE: %.2f' %
+          tuple(np.mean(pd.DataFrame([[r2_score(y_true[0], y_predict[0]),
+                                       mean_squared_error(y_true[0],
+                                                          y_predict[0])]
+                                      for (y_true, y_predict)
+                                      in zip(y_test, predictions)]),
+                        axis=0)))
 
-    print('med R2: %.2f, med MSE: %.2f'% \
-          tuple(np.median(pd.DataFrame([[r2_score(y_true[0], y_predict[0]), \
-            mean_squared_error(y_true[0], y_predict[0])] for (y_true, y_predict) \
-            in zip(y_test, predictions)]),axis=0)))
+    print('med R2: %.2f, med MSE: %.2f' %
+          tuple(np.median(pd.DataFrame([[r2_score(y_true[0], y_predict[0]),
+                                         mean_squared_error(y_true[0],
+                                                            y_predict[0])]
+                                        for (y_true, y_predict)
+                                        in zip(y_test, predictions)]),
+                          axis=0)))

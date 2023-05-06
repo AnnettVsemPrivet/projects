@@ -39,7 +39,7 @@ def std(
         return std_cl
 
     except Exception as ex:
-        
+
         print(f"Ошибка при расчете СКО: {ex}")
         print(f"Кластер {i}, Строка {j}")
 
@@ -50,14 +50,16 @@ def metric_std(
     y_pred: np.ndarray,
     best_cl: int = 10,
 ) -> float:
-    """Рассчитывает среднее среднеквадратичное отклонение от центроидов по {best_cl} 
-    лучшим кластерам (зависит от числа кластеров, которое минимально хотим найти).
+    """Рассчитывает среднее среднеквадратичное отклонение от центроидов
+        по {best_cl} лучшим кластерам (зависит от числа кластеров,
+        которое минимально хотим найти).
 
     Args:
         model (object): Модель кластеризации.
         data (np.ndarray): Стандартизированный датасет.
         y_pred (np.ndarray): Предсказанные кластеры.
-        best_cl (int, optional): Количество кластеров для расчета метрики. Defaults to 10.
+        best_cl (int, optional): Количество кластеров для расчета метрики.
+            Defaults to 10.
 
     Returns:
         mean_std (float): Среднее СКО на лучших кластерах.
@@ -74,14 +76,14 @@ def indices_std(
     y_pred: np.ndarray,
     best_cl: int = 10,
 ) -> list:
-    """Рассчитывает среднее среднеквадратичное отклонение от центроидов по {best_cl} 
-    лучшим кластерам (зависит от числа кластеров, которое минимально хотим найти).
+    """Выводит индексы кластеров с лучшими СКО.
 
     Args:
         model (object): Модель кластеризации.
         data (np.ndarray): Стандартизированный датасет.
         y_pred (np.ndarray): Предсказанные кластеры.
-        best_cl (int, optional): Количество кластеров для расчета метрики. Defaults to 10.
+        best_cl (int, optional): Количество кластеров для расчета метрики.
+            Defaults to 10.
 
     Returns:
         idx (list): Список индексов кластеров с лучшими СКО.
@@ -103,25 +105,30 @@ def optimize(
 
     Args:
         data (np.ndarray): Стандартизированный датасет.
-        
-        all_clusters_min_max_step (tuple): Число кластеров, которые подбирает модель (ОТ, ДО, ШАГ).
-        
-        best_clusters (int): Число хороших кластеров, которые ищет модель. Defaults to 10.
-        
-        n_trials (int, optional): Количество проходов оптимизации. Defaults to 10.
-        (если хочется пройти все варианты, то надо ставить хотя бы число равное кол-ву сочетаний *4, 
-        но обычно хватает кол-ва сочетаний / 2)
-        
-        seed (int, optional): Значение для инициализации случайных чисел. Defaults to 0.
-       
+
+        all_clusters_min_max_step (tuple): Число кластеров, которые
+            подбирает модель (ОТ, ДО, ШАГ).
+
+        best_clusters (int): Число хороших кластеров, которые ищет модель.
+            Defaults to 10.
+
+        n_trials (int, optional): Количество проходов оптимизации.
+            Defaults to 10.
+            (если хочется пройти все варианты, то надо ставить хотя бы число
+            равное кол-ву сочетаний *4, но обычно хватает кол-ва сочетаний /2)
+
+        seed (int, optional): Значение для инициализации случайных чисел.
+            Defaults to 0.
+
     Returns:
         best_params (dict): Подобранные параметры (общее число кластеров).
 
     """
 
     try:
-        param_history=[]
-        iteration=[1] # в objective можно извне передать только list
+        param_history = []
+        iteration = [1]  # в objective можно извне передать только list
+
         def objective(trial):
             ts = time.time()
 
@@ -129,15 +136,17 @@ def optimize(
             n_clusters_max = all_clusters_min_max_step[1]
             n_clusters_step = all_clusters_min_max_step[2]
 
-            n_clusters = trial.suggest_int("n_clusters", n_clusters_min, n_clusters_max,
+            n_clusters = trial.suggest_int("n_clusters",
+                                           n_clusters_min,
+                                           n_clusters_max,
                                            step=n_clusters_step)
             print(f'n_clusters = {n_clusters}:')
 
             # test for repeated params
             # we use tuple because that's easier to add more params this way
             if (n_clusters) in param_history:
-                print(f'Итерация {np.sum(iteration)}/{n_trials} завершена'+ \
-                      'в связи с повтором параметров')
+                print(f'Итерация {np.sum(iteration)} / {n_trials} завершена'
+                      + 'в связи с повтором параметров')
                 iteration.append(1)
                 raise optuna.exceptions.TrialPruned()
             param_history.append((n_clusters))
@@ -157,15 +166,16 @@ def optimize(
                 score = metric_std(ks, data, y_pred, best_clusters)
 
                 sec = time.time() - ts
-                print(f'Итерация {np.sum(iteration)}/{n_trials} завершена, '+ \
-                      f'обработка {n_clusters} кластеров заняла {np.round(sec/60,2)} минут')
+                print(f'Итерация {np.sum(iteration)} / {n_trials} завершена, '
+                      + f'обработка {n_clusters} кластеров заняла '
+                      + f'{np.round(sec/60,2)} минут')
                 iteration.append(1)
 
                 return score
 
             except EmptyClusterError:
-                print(f'Итерация {np.sum(iteration)}/{n_trials} завершена из-за слишком '+ \
-                      'большого числа заданных кластеров')
+                print(f'Итерация {np.sum(iteration)} / {n_trials} завершена'
+                      + ' из-за слишком большого числа заданных кластеров')
                 iteration.append(1)
                 raise optuna.exceptions.TrialPruned()
 
@@ -191,8 +201,9 @@ class model_kshape(object):
         train(data): обучает модель по np.ndarray data
         predict(data): прогнозирует кластеры исходя из обученных центров
         visualize(n_best): выводит n лучших кластеров
-        visualize_with_predict(df, data, n_best): выводит n лучших кластеров и все продолжения их
-            временных рядов на {predict_period} вперед (период задается при формировании датасета)
+        visualize_with_predict(df, data, n_best): выводит n лучших кластеров
+            и все продолжения их временных рядов на {predict_period} вперед
+            (период задается при формировании датасета)
         save(name): сохраняет в формате .hdf5 с указанным названием
     """
 
@@ -206,13 +217,15 @@ class model_kshape(object):
         Args:
             n_clusters (int): Число кластеров, которые подбирает модель.
 
-            seed (int, optional): Значение для инициализации случайных чисел. Defaults to 0.
-        """ 
+            seed (int, optional): Значение для инициализации случайных чисел.
+                Defaults to 0.
+        """
         self.n_clusters = n_clusters
         self.seed = seed
 
     def train(self, data: np.ndarray):
-        self.model = KShape(n_clusters=self.n_clusters, verbose=False, n_init=2,
+        self.model = KShape(n_clusters=self.n_clusters,
+                            verbose=False, n_init=2,
                             random_state=self.seed)
         self.model.fit(data)
 
@@ -238,14 +251,17 @@ class model_kshape(object):
             plt.xlim(0, sz)
             plt.ylim(-4, 4)
             plt.title(
-                f"Cluster {str(cl)} has {str(data[y_pred == cl].shape[0])} "+ \
-                    "timeseries and std is %.2f"%list_std[cl]
+                f"Cluster {str(cl)} has {str(data[y_pred == cl].shape[0])}"
+                + " timeseries and std is %.2f" % list_std[cl]
             )
 
         plt.tight_layout()
         plt.show()
 
-    def visualize_with_predict(self, df: pd.DataFrame, data: np.ndarray, n_best: int = 10):
+    def visualize_with_predict(self,
+                               df: pd.DataFrame,
+                               data: np.ndarray,
+                               n_best: int = 10):
         y_pred = self.model.predict(data)
         best_idx = indices_std(self.model, data, y_pred, n_best)
         list_std = std(self.model, data, y_pred)
@@ -259,17 +275,17 @@ class model_kshape(object):
             plt.subplot(nc, 1, 1 + yi)
             cl_df = df[y_pred == cl].reset_index(drop=True)
             for xx in range(len(cl_df)):
-                plt.plot(cl_df.iloc[xx,:], "k-", alpha=0.2)
+                plt.plot(cl_df.iloc[xx, :], "k-", alpha=0.2)
             plt.plot(self.model.cluster_centers_[cl].ravel(), "r-")
             plt.xlim(0, sz)
             plt.ylim(-4, 4)
             plt.title(
-                f"Cluster {str(cl)} has {str(df[y_pred == cl].shape[0])} timeseries "+ \
-                    "and std is %.2f"%list_std[cl]
+                f"Cluster {str(cl)} has {str(df[y_pred == cl].shape[0])}"
+                + " timeseries and std is %.2f" % list_std[cl]
             )
 
         plt.tight_layout()
         plt.show()
 
     def save(self, name: str):
-        self.model.to_hdf5(str(name)+'.hdf5')
+        self.model.to_hdf5(str(name) + '.hdf5')

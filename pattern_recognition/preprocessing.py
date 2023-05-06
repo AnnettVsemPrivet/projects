@@ -21,36 +21,41 @@ def data_division(
     Функция используется отдельно для подбора параметров разбиения.
 
     Args:
-        data (DataFrame): Датафрейм, содержащий столбцы {column_value} и {column_time}.
-        
+        data (DataFrame): Датафрейм, содержащий
+            столбцы {column_value} и {column_time}.
+
         column_value (str): Столбец, значения из которого обрабатываем.
-        
+
         period (int): Количество свечей в паттерне.
-        
+
         step (int): Сдвиг с которым создаются новые элементы выборки
         (для последовательного разбиения step=period).
 
         rolling_period (int): Размер окна для скользящего среднего
         (для отсутствия усреднения rolling_period=1).
-        
-        predict_period (int): Размер периода после основного временного ряда, 
-        который стоит сохранять отдельно, чтобы позже проверить возможность 
-        прогнозировать по конкретному кластеру. 
+
+        predict_period (int): Размер периода после основного временного ряда,
+        который стоит сохранять отдельно, чтобы позже проверить возможность
+        прогнозировать по конкретному кластеру.
         (если не нужно, можно поставить predict_period=0)
 
         train_sample (int): Длина подвыборки из исходного датасета
         (без повтора).
 
         column_time (str, optional): Столбец с переменной времени
-        (тип datetime или строка, которую можно преобразовать в datetime). Defaults to 'begin'.
-        
-        seed (int, optional): Значение для инициализации случайных чисел. Defaults to 0.
+        (тип datetime или строка, которую можно преобразовать в datetime).
+            Defaults to 'begin'.
+
+        seed (int, optional): Значение для инициализации случайных чисел.
+            Defaults to 0.
 
     Returns: array_cluster, array_predict, scaler
         array_cluster: Рандомная выборка из стандартизированных
         временных рядов заданного размера.
-        array_predict: Та же рандомная выборка, но увеличенная на predict_period.
-        scaler: Скалер, который потом пригодится чтобы отмасштабировать данные в обратную сторону.
+        array_predict: Та же рандомная выборка,
+            но увеличенная на predict_period.
+        scaler: Скалер, который потом пригодится,
+            чтобы отмасштабировать данные в обратную сторону.
     """
 
     try:
@@ -66,7 +71,9 @@ def data_division(
             my_list = list(df_day["new_col"])
             composite_list = [
                 my_list[x : x + period + predict_period]
-                for x in range(0, len(my_list) - period - predict_period + 1, step)
+                for x in range(0,
+                               len(my_list) - period - predict_period + 1,
+                               step)
             ]
             full_range += composite_list
 
@@ -90,7 +97,9 @@ def data_division(
         print(f"Размер итоговой выборки: {df_norm.shape}")
 
         array_predict = pd.DataFrame([x.flatten().tolist() for x in df_norm])
-        array_cluster = np.array([x.flatten()[:period].reshape(period,1).tolist() for x in df_norm])
+        array_cluster = np.array(
+            [x.flatten()[:period].reshape(period, 1).tolist()
+             for x in df_norm])
 
         return array_cluster, array_predict, scaler
 
