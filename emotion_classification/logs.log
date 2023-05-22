@@ -8016,3 +8016,48 @@ THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
                 max_iter=None, normalize='deprecated', positive=False,
                 random_state=5075, solver='auto', tol=0.001)
 2023-05-23 01:45:29,639:INFO:compare_models() successfully completed......................................
+2023-05-23 01:57:40,871:INFO:Initializing plot_model()
+2023-05-23 01:57:40,889:INFO:plot_model(plot=confusion_matrix, fold=None, use_train_data=False, verbose=True, display=None, display_format=None, estimator=RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, system=True)
+2023-05-23 01:57:40,890:INFO:Checking exceptions
+2023-05-23 01:57:41,317:INFO:Preloading libraries
+2023-05-23 01:57:41,342:INFO:Copying training dataset
+2023-05-23 01:57:41,342:INFO:Plot type: confusion_matrix
+2023-05-23 01:57:42,492:INFO:Fitting Model
+2023-05-23 01:57:42,745:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\base.py:450: UserWarning: X does not have valid feature names, but RidgeClassifier was fitted with feature names
+  warnings.warn(
+
+2023-05-23 01:57:42,772:INFO:Scoring test/hold-out set
+2023-05-23 01:57:44,187:INFO:Visual Rendered Successfully
+2023-05-23 01:57:46,872:INFO:plot_model() successfully completed......................................
+2023-05-23 01:57:56,172:INFO:Initializing plot_model()
+2023-05-23 01:57:56,173:INFO:plot_model(plot=auc, fold=None, use_train_data=False, verbose=True, display=None, display_format=None, estimator=RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, system=True)
+2023-05-23 01:57:56,173:INFO:Checking exceptions
+2023-05-23 01:59:18,488:INFO:Initializing plot_model()
+2023-05-23 01:59:18,496:INFO:plot_model(plot=feature, fold=None, use_train_data=False, verbose=True, display=None, display_format=None, estimator=RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, system=True)
+2023-05-23 01:59:18,497:INFO:Checking exceptions
+2023-05-23 01:59:19,025:INFO:Preloading libraries
+2023-05-23 01:59:19,043:INFO:Copying training dataset
+2023-05-23 01:59:19,043:INFO:Plot type: feature
+2023-05-23 01:59:21,876:INFO:Visual Rendered Successfully
+2023-05-23 01:59:24,539:INFO:plot_model() successfully completed......................................
+2023-05-23 02:05:08,718:INFO:Initializing plot_model()
+2023-05-23 02:05:08,728:INFO:plot_model(plot=f, fold=None, use_train_data=False, verbose=True, display=None, display_format=None, estimator=RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, system=True)
+2023-05-23 02:05:08,728:INFO:Checking exceptions
+2023-05-23 02:05:11,605:INFO:Initializing plot_model()
+2023-05-23 02:05:11,606:INFO:plot_model(plot=f1, fold=None, use_train_data=False, verbose=True, display=None, display_format=None, estimator=RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, system=True)
+2023-05-23 02:05:11,606:INFO:Checking exceptions
+2023-05-23 02:05:14,000:INFO:Initializing plot_model()
+2023-05-23 02:05:14,000:INFO:plot_model(plot=F1, fold=None, use_train_data=False, verbose=True, display=None, display_format=None, estimator=RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001), feature_name=None, fit_kwargs=None, groups=None, label=False, plot_kwargs=None, save=False, scale=1, self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, system=True)
+2023-05-23 02:05:14,000:INFO:Checking exceptions
