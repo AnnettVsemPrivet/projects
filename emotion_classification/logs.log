@@ -6777,3 +6777,1242 @@ Alternately, you can install this by running `pip install pycaret[models]`
 'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
 Alternately, you can install this by running `pip install pycaret[models]`
 2023-05-23 00:34:23,871:INFO:setup() successfully completed in 6.78s...............
+2023-05-23 00:38:16,606:INFO:Initializing compare_models()
+2023-05-23 00:38:16,607:INFO:compare_models(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, include=None, fold=None, round=4, cross_validation=True, sort=Accuracy, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, 'include': None, 'exclude': None, 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'Accuracy', 'n_select': 1, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'probability_threshold': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.classification.oop.ClassificationExperiment'>}, exclude=None)
+2023-05-23 00:38:16,607:INFO:Checking exceptions
+2023-05-23 00:38:16,733:INFO:Preparing display monitor
+2023-05-23 00:38:16,840:INFO:Initializing Logistic Regression
+2023-05-23 00:38:16,841:INFO:Total runtime is 0.0 minutes
+2023-05-23 00:38:16,850:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:38:16,851:INFO:Initializing create_model()
+2023-05-23 00:38:16,851:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=lr, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:38:16,852:INFO:Checking exceptions
+2023-05-23 00:38:16,853:INFO:Importing libraries
+2023-05-23 00:38:16,853:INFO:Copying training dataset
+2023-05-23 00:38:17,043:INFO:Defining folds
+2023-05-23 00:38:17,043:INFO:Declaring metric variables
+2023-05-23 00:38:17,048:INFO:Importing untrained model
+2023-05-23 00:38:17,052:INFO:Logistic Regression Imported successfully
+2023-05-23 00:38:17,067:INFO:Starting cross validation
+2023-05-23 00:38:17,076:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:38:41,702:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:231: UserWarning: Persisting input arguments took 0.61s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_transformer = self._memory_fit(
+
+2023-05-23 00:38:41,738:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:231: UserWarning: Persisting input arguments took 0.66s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_transformer = self._memory_fit(
+
+2023-05-23 00:38:42,918:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:238: UserWarning: Persisting input arguments took 0.65s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, y = self._memory_transform(
+
+2023-05-23 00:38:42,923:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:238: UserWarning: Persisting input arguments took 0.61s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, y = self._memory_transform(
+
+2023-05-23 00:38:43,065:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:238: UserWarning: Persisting input arguments took 0.51s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, y = self._memory_transform(
+
+2023-05-23 00:38:49,229:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.52s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:38:50,152:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:108: UserWarning: Persisting input arguments took 0.52s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, y = pipeline._memory_transform(transformer, X, y)
+
+2023-05-23 00:38:50,778:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:108: UserWarning: Persisting input arguments took 0.59s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, y = pipeline._memory_transform(transformer, X, y)
+
+2023-05-23 00:38:50,844:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.61s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:38:51,505:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.65s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:38:51,533:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.67s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:38:53,965:INFO:Calculating mean and std
+2023-05-23 00:38:53,972:INFO:Creating metrics dataframe
+2023-05-23 00:38:54,814:INFO:Uploading results into container
+2023-05-23 00:38:54,817:INFO:Uploading model into container now
+2023-05-23 00:38:54,823:INFO:_master_model_container: 1
+2023-05-23 00:38:54,823:INFO:_display_container: 2
+2023-05-23 00:38:54,828:INFO:LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=5075, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+2023-05-23 00:38:54,829:INFO:create_model() successfully completed......................................
+2023-05-23 00:38:55,981:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:38:55,981:INFO:Creating metrics dataframe
+2023-05-23 00:38:56,001:INFO:Initializing K Neighbors Classifier
+2023-05-23 00:38:56,002:INFO:Total runtime is 0.6526845852533977 minutes
+2023-05-23 00:38:56,009:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:38:56,010:INFO:Initializing create_model()
+2023-05-23 00:38:56,010:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=knn, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:38:56,011:INFO:Checking exceptions
+2023-05-23 00:38:56,011:INFO:Importing libraries
+2023-05-23 00:38:56,011:INFO:Copying training dataset
+2023-05-23 00:38:56,219:INFO:Defining folds
+2023-05-23 00:38:56,219:INFO:Declaring metric variables
+2023-05-23 00:38:56,225:INFO:Importing untrained model
+2023-05-23 00:38:56,235:INFO:K Neighbors Classifier Imported successfully
+2023-05-23 00:38:56,254:INFO:Starting cross validation
+2023-05-23 00:38:56,272:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:38:57,732:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:108: UserWarning: Persisting input arguments took 0.53s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, y = pipeline._memory_transform(transformer, X, y)
+
+2023-05-23 00:38:57,865:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.70s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:38:59,304:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 1.47s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:00,927:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\neighbors\_classification.py:228: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
+  mode, _ = stats.mode(_y[neigh_ind, k], axis=1)
+
+2023-05-23 00:39:02,492:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\neighbors\_classification.py:228: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
+  mode, _ = stats.mode(_y[neigh_ind, k], axis=1)
+
+2023-05-23 00:39:12,129:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\neighbors\_classification.py:228: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
+  mode, _ = stats.mode(_y[neigh_ind, k], axis=1)
+
+2023-05-23 00:39:13,963:INFO:Calculating mean and std
+2023-05-23 00:39:13,967:INFO:Creating metrics dataframe
+2023-05-23 00:39:14,939:INFO:Uploading results into container
+2023-05-23 00:39:14,940:INFO:Uploading model into container now
+2023-05-23 00:39:14,942:INFO:_master_model_container: 2
+2023-05-23 00:39:14,942:INFO:_display_container: 2
+2023-05-23 00:39:14,943:INFO:KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=-1, n_neighbors=5, p=2,
+                     weights='uniform')
+2023-05-23 00:39:14,943:INFO:create_model() successfully completed......................................
+2023-05-23 00:39:15,091:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:39:15,091:INFO:Creating metrics dataframe
+2023-05-23 00:39:15,113:INFO:Initializing Naive Bayes
+2023-05-23 00:39:15,114:INFO:Total runtime is 0.9712376634279887 minutes
+2023-05-23 00:39:15,121:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:39:15,122:INFO:Initializing create_model()
+2023-05-23 00:39:15,122:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=nb, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:39:15,122:INFO:Checking exceptions
+2023-05-23 00:39:15,123:INFO:Importing libraries
+2023-05-23 00:39:15,123:INFO:Copying training dataset
+2023-05-23 00:39:15,349:INFO:Defining folds
+2023-05-23 00:39:15,350:INFO:Declaring metric variables
+2023-05-23 00:39:15,360:INFO:Importing untrained model
+2023-05-23 00:39:15,371:INFO:Naive Bayes Imported successfully
+2023-05-23 00:39:15,398:INFO:Starting cross validation
+2023-05-23 00:39:15,438:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:39:17,231:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.51s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:17,372:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.51s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:17,375:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.52s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:20,527:INFO:Calculating mean and std
+2023-05-23 00:39:20,531:INFO:Creating metrics dataframe
+2023-05-23 00:39:21,349:INFO:Uploading results into container
+2023-05-23 00:39:21,351:INFO:Uploading model into container now
+2023-05-23 00:39:21,352:INFO:_master_model_container: 3
+2023-05-23 00:39:21,352:INFO:_display_container: 2
+2023-05-23 00:39:21,353:INFO:GaussianNB(priors=None, var_smoothing=1e-09)
+2023-05-23 00:39:21,354:INFO:create_model() successfully completed......................................
+2023-05-23 00:39:21,473:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:39:21,473:INFO:Creating metrics dataframe
+2023-05-23 00:39:21,493:INFO:Initializing Decision Tree Classifier
+2023-05-23 00:39:21,494:INFO:Total runtime is 1.0775741060574848 minutes
+2023-05-23 00:39:21,503:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:39:21,504:INFO:Initializing create_model()
+2023-05-23 00:39:21,504:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=dt, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:39:21,505:INFO:Checking exceptions
+2023-05-23 00:39:21,505:INFO:Importing libraries
+2023-05-23 00:39:21,505:INFO:Copying training dataset
+2023-05-23 00:39:21,718:INFO:Defining folds
+2023-05-23 00:39:21,719:INFO:Declaring metric variables
+2023-05-23 00:39:21,728:INFO:Importing untrained model
+2023-05-23 00:39:21,738:INFO:Decision Tree Classifier Imported successfully
+2023-05-23 00:39:21,760:INFO:Starting cross validation
+2023-05-23 00:39:21,773:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:39:47,252:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.57s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:39:47,575:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.51s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:39:48,177:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.56s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:48,435:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.56s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:49,751:INFO:Calculating mean and std
+2023-05-23 00:39:49,758:INFO:Creating metrics dataframe
+2023-05-23 00:39:50,954:INFO:Uploading results into container
+2023-05-23 00:39:50,956:INFO:Uploading model into container now
+2023-05-23 00:39:50,957:INFO:_master_model_container: 4
+2023-05-23 00:39:50,957:INFO:_display_container: 2
+2023-05-23 00:39:50,959:INFO:DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       random_state=5075, splitter='best')
+2023-05-23 00:39:50,960:INFO:create_model() successfully completed......................................
+2023-05-23 00:39:51,109:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:39:51,110:INFO:Creating metrics dataframe
+2023-05-23 00:39:51,134:INFO:Initializing SVM - Linear Kernel
+2023-05-23 00:39:51,135:INFO:Total runtime is 1.571590228875478 minutes
+2023-05-23 00:39:51,145:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:39:51,146:INFO:Initializing create_model()
+2023-05-23 00:39:51,147:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=svm, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:39:51,147:INFO:Checking exceptions
+2023-05-23 00:39:51,148:INFO:Importing libraries
+2023-05-23 00:39:51,148:INFO:Copying training dataset
+2023-05-23 00:39:51,458:INFO:Defining folds
+2023-05-23 00:39:51,459:INFO:Declaring metric variables
+2023-05-23 00:39:51,467:INFO:Importing untrained model
+2023-05-23 00:39:51,478:INFO:SVM - Linear Kernel Imported successfully
+2023-05-23 00:39:51,509:INFO:Starting cross validation
+2023-05-23 00:39:51,532:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:39:55,547:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.55s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:39:55,553:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.52s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:39:55,637:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.51s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:39:56,626:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.66s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:56,634:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.66s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:56,688:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.65s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:39:56,716:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 71, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py", line 130, in _score
+    return super()._score(
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 298, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 73, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\utils\metaestimators.py", line 109, in __get__
+    if not self.check(obj):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1199, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-05-23 00:39:56,728:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 71, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py", line 130, in _score
+    return super()._score(
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 298, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 73, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\utils\metaestimators.py", line 109, in __get__
+    if not self.check(obj):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1199, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-05-23 00:39:56,789:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 71, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py", line 130, in _score
+    return super()._score(
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 298, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 73, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\utils\metaestimators.py", line 109, in __get__
+    if not self.check(obj):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\linear_model\_stochastic_gradient.py", line 1199, in _check_proba
+    raise AttributeError(
+AttributeError: probability estimates are not available for loss='hinge'
+
+  warnings.warn(
+
+2023-05-23 00:39:59,100:INFO:Calculating mean and std
+2023-05-23 00:39:59,106:INFO:Creating metrics dataframe
+2023-05-23 00:39:59,952:INFO:Uploading results into container
+2023-05-23 00:39:59,953:INFO:Uploading model into container now
+2023-05-23 00:39:59,954:INFO:_master_model_container: 5
+2023-05-23 00:39:59,954:INFO:_display_container: 2
+2023-05-23 00:39:59,955:INFO:SGDClassifier(alpha=0.0001, average=False, class_weight=None,
+              early_stopping=False, epsilon=0.1, eta0=0.001, fit_intercept=True,
+              l1_ratio=0.15, learning_rate='optimal', loss='hinge',
+              max_iter=1000, n_iter_no_change=5, n_jobs=-1, penalty='l2',
+              power_t=0.5, random_state=5075, shuffle=True, tol=0.001,
+              validation_fraction=0.1, verbose=0, warm_start=False)
+2023-05-23 00:39:59,955:INFO:create_model() successfully completed......................................
+2023-05-23 00:40:00,109:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:40:00,109:INFO:Creating metrics dataframe
+2023-05-23 00:40:00,141:INFO:Initializing Ridge Classifier
+2023-05-23 00:40:00,141:INFO:Total runtime is 1.7216984311739603 minutes
+2023-05-23 00:40:00,153:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:40:00,154:INFO:Initializing create_model()
+2023-05-23 00:40:00,154:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=ridge, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:40:00,155:INFO:Checking exceptions
+2023-05-23 00:40:00,155:INFO:Importing libraries
+2023-05-23 00:40:00,155:INFO:Copying training dataset
+2023-05-23 00:40:00,387:INFO:Defining folds
+2023-05-23 00:40:00,387:INFO:Declaring metric variables
+2023-05-23 00:40:00,397:INFO:Importing untrained model
+2023-05-23 00:40:00,408:INFO:Ridge Classifier Imported successfully
+2023-05-23 00:40:00,427:INFO:Starting cross validation
+2023-05-23 00:40:00,438:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:40:02,711:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.59s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:40:02,727:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.52s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:40:02,760:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 71, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py", line 130, in _score
+    return super()._score(
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 298, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 73, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-05-23 00:40:02,787:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 71, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py", line 130, in _score
+    return super()._score(
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 298, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 73, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-05-23 00:40:02,970:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.65s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:40:03,050:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py:138: FitFailedWarning: Metric 'make_scorer(roc_auc_score, needs_proba=True, error_score=0.0, average=weighted, multi_class=ovr)' failed and error score 0.0 has been returned instead. If this is a custom metric, this usually means that the error is in the metric code. Full exception below:
+Traceback (most recent call last):
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 71, in _cached_call
+    return cache[method]
+KeyError: 'predict_proba'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\metrics.py", line 130, in _score
+    return super()._score(
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 298, in _score
+    y_pred = method_caller(clf, "predict_proba", X)
+  File "D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_scorer.py", line 73, in _cached_call
+    result = getattr(estimator, method)(*args, **kwargs)
+  File "C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py", line 121, in __getattr__
+    return getattr(self._final_estimator, name)
+AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
+
+  warnings.warn(
+
+2023-05-23 00:40:05,162:INFO:Calculating mean and std
+2023-05-23 00:40:05,168:INFO:Creating metrics dataframe
+2023-05-23 00:40:05,996:INFO:Uploading results into container
+2023-05-23 00:40:05,997:INFO:Uploading model into container now
+2023-05-23 00:40:05,999:INFO:_master_model_container: 6
+2023-05-23 00:40:06,000:INFO:_display_container: 2
+2023-05-23 00:40:06,001:INFO:RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001)
+2023-05-23 00:40:06,001:INFO:create_model() successfully completed......................................
+2023-05-23 00:40:06,144:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:40:06,144:INFO:Creating metrics dataframe
+2023-05-23 00:40:06,168:INFO:Initializing Random Forest Classifier
+2023-05-23 00:40:06,168:INFO:Total runtime is 1.8221444606781005 minutes
+2023-05-23 00:40:06,177:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:40:06,178:INFO:Initializing create_model()
+2023-05-23 00:40:06,178:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=rf, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:40:06,179:INFO:Checking exceptions
+2023-05-23 00:40:06,179:INFO:Importing libraries
+2023-05-23 00:40:06,179:INFO:Copying training dataset
+2023-05-23 00:40:06,389:INFO:Defining folds
+2023-05-23 00:40:06,389:INFO:Declaring metric variables
+2023-05-23 00:40:06,398:INFO:Importing untrained model
+2023-05-23 00:40:06,406:INFO:Random Forest Classifier Imported successfully
+2023-05-23 00:40:06,427:INFO:Starting cross validation
+2023-05-23 00:40:06,439:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:40:44,856:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.65s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:40:44,922:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.60s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:40:45,189:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.53s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:40:46,129:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.76s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:40:46,270:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.84s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:40:46,567:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.87s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:40:49,369:INFO:Calculating mean and std
+2023-05-23 00:40:49,372:INFO:Creating metrics dataframe
+2023-05-23 00:40:50,254:INFO:Uploading results into container
+2023-05-23 00:40:50,255:INFO:Uploading model into container now
+2023-05-23 00:40:50,257:INFO:_master_model_container: 7
+2023-05-23 00:40:50,257:INFO:_display_container: 2
+2023-05-23 00:40:50,259:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='auto',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=5075, verbose=0, warm_start=False)
+2023-05-23 00:40:50,259:INFO:create_model() successfully completed......................................
+2023-05-23 00:40:50,388:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:40:50,388:INFO:Creating metrics dataframe
+2023-05-23 00:40:50,412:INFO:Initializing Quadratic Discriminant Analysis
+2023-05-23 00:40:50,412:INFO:Total runtime is 2.559537140528361 minutes
+2023-05-23 00:40:50,421:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:40:50,422:INFO:Initializing create_model()
+2023-05-23 00:40:50,422:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=qda, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:40:50,423:INFO:Checking exceptions
+2023-05-23 00:40:50,423:INFO:Importing libraries
+2023-05-23 00:40:50,423:INFO:Copying training dataset
+2023-05-23 00:40:50,631:INFO:Defining folds
+2023-05-23 00:40:50,632:INFO:Declaring metric variables
+2023-05-23 00:40:50,640:INFO:Importing untrained model
+2023-05-23 00:40:50,652:INFO:Quadratic Discriminant Analysis Imported successfully
+2023-05-23 00:40:50,670:INFO:Starting cross validation
+2023-05-23 00:40:50,683:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:40:53,189:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\discriminant_analysis.py:878: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-05-23 00:40:54,085:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\discriminant_analysis.py:878: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-05-23 00:40:54,261:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\discriminant_analysis.py:878: UserWarning: Variables are collinear
+  warnings.warn("Variables are collinear")
+
+2023-05-23 00:41:03,151:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.53s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:41:03,741:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.53s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:41:03,753:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.53s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 00:41:04,322:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.67s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:41:04,781:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.64s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:41:04,798:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.62s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:41:09,756:INFO:Calculating mean and std
+2023-05-23 00:41:09,761:INFO:Creating metrics dataframe
+2023-05-23 00:41:10,633:INFO:Uploading results into container
+2023-05-23 00:41:10,635:INFO:Uploading model into container now
+2023-05-23 00:41:10,636:INFO:_master_model_container: 8
+2023-05-23 00:41:10,636:INFO:_display_container: 2
+2023-05-23 00:41:10,637:INFO:QuadraticDiscriminantAnalysis(priors=None, reg_param=0.0,
+                              store_covariance=False, tol=0.0001)
+2023-05-23 00:41:10,637:INFO:create_model() successfully completed......................................
+2023-05-23 00:41:10,782:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:41:10,782:INFO:Creating metrics dataframe
+2023-05-23 00:41:10,809:INFO:Initializing Ada Boost Classifier
+2023-05-23 00:41:10,809:INFO:Total runtime is 2.8994899272918704 minutes
+2023-05-23 00:41:10,821:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:41:10,822:INFO:Initializing create_model()
+2023-05-23 00:41:10,822:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=ada, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:41:10,822:INFO:Checking exceptions
+2023-05-23 00:41:10,823:INFO:Importing libraries
+2023-05-23 00:41:10,823:INFO:Copying training dataset
+2023-05-23 00:41:11,035:INFO:Defining folds
+2023-05-23 00:41:11,035:INFO:Declaring metric variables
+2023-05-23 00:41:11,044:INFO:Importing untrained model
+2023-05-23 00:41:11,053:INFO:Ada Boost Classifier Imported successfully
+2023-05-23 00:41:11,075:INFO:Starting cross validation
+2023-05-23 00:41:11,088:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 00:42:21,104:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.57s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:42:21,513:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.60s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:42:21,783:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.60s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 00:42:24,725:INFO:Calculating mean and std
+2023-05-23 00:42:24,729:INFO:Creating metrics dataframe
+2023-05-23 00:42:25,595:INFO:Uploading results into container
+2023-05-23 00:42:25,597:INFO:Uploading model into container now
+2023-05-23 00:42:25,598:INFO:_master_model_container: 9
+2023-05-23 00:42:25,598:INFO:_display_container: 2
+2023-05-23 00:42:25,599:INFO:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=1.0,
+                   n_estimators=50, random_state=5075)
+2023-05-23 00:42:25,599:INFO:create_model() successfully completed......................................
+2023-05-23 00:42:25,731:INFO:SubProcess create_model() end ==================================
+2023-05-23 00:42:25,731:INFO:Creating metrics dataframe
+2023-05-23 00:42:25,758:INFO:Initializing Gradient Boosting Classifier
+2023-05-23 00:42:25,758:INFO:Total runtime is 4.148635856310527 minutes
+2023-05-23 00:42:25,768:INFO:SubProcess create_model() called ==================================
+2023-05-23 00:42:25,769:INFO:Initializing create_model()
+2023-05-23 00:42:25,769:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=gbc, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 00:42:25,770:INFO:Checking exceptions
+2023-05-23 00:42:25,770:INFO:Importing libraries
+2023-05-23 00:42:25,770:INFO:Copying training dataset
+2023-05-23 00:42:26,015:INFO:Defining folds
+2023-05-23 00:42:26,016:INFO:Declaring metric variables
+2023-05-23 00:42:26,027:INFO:Importing untrained model
+2023-05-23 00:42:26,037:INFO:Gradient Boosting Classifier Imported successfully
+2023-05-23 00:42:26,061:INFO:Starting cross validation
+2023-05-23 00:42:26,073:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 01:14:40,783:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 1.11s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:14:43,044:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 1.24s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:14:43,066:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 1.21s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:14:45,991:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 1.78s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:14:55,166:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.72s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:14:56,425:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.62s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:14:57,353:INFO:Calculating mean and std
+2023-05-23 01:14:57,444:INFO:Creating metrics dataframe
+2023-05-23 01:14:58,406:INFO:Uploading results into container
+2023-05-23 01:14:58,417:INFO:Uploading model into container now
+2023-05-23 01:14:58,441:INFO:_master_model_container: 10
+2023-05-23 01:14:58,441:INFO:_display_container: 2
+2023-05-23 01:14:58,471:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='deviance', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=5075, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-05-23 01:14:58,472:INFO:create_model() successfully completed......................................
+2023-05-23 01:15:00,684:INFO:SubProcess create_model() end ==================================
+2023-05-23 01:15:00,685:INFO:Creating metrics dataframe
+2023-05-23 01:15:00,731:INFO:Initializing Linear Discriminant Analysis
+2023-05-23 01:15:00,731:INFO:Total runtime is 36.731525766849515 minutes
+2023-05-23 01:15:00,738:INFO:SubProcess create_model() called ==================================
+2023-05-23 01:15:00,738:INFO:Initializing create_model()
+2023-05-23 01:15:00,739:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=lda, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 01:15:00,739:INFO:Checking exceptions
+2023-05-23 01:15:00,739:INFO:Importing libraries
+2023-05-23 01:15:00,740:INFO:Copying training dataset
+2023-05-23 01:15:01,132:INFO:Defining folds
+2023-05-23 01:15:01,132:INFO:Declaring metric variables
+2023-05-23 01:15:01,139:INFO:Importing untrained model
+2023-05-23 01:15:01,145:INFO:Linear Discriminant Analysis Imported successfully
+2023-05-23 01:15:01,162:INFO:Starting cross validation
+2023-05-23 01:15:01,168:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 01:15:03,784:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:238: UserWarning: Persisting input arguments took 1.08s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, y = self._memory_transform(
+
+2023-05-23 01:15:16,103:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.80s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:15:16,111:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.87s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:15:17,291:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.82s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:15:17,411:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.71s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:15:17,412:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.72s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:15:18,476:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.76s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:15:20,364:INFO:Calculating mean and std
+2023-05-23 01:15:20,372:INFO:Creating metrics dataframe
+2023-05-23 01:15:21,329:INFO:Uploading results into container
+2023-05-23 01:15:21,331:INFO:Uploading model into container now
+2023-05-23 01:15:21,332:INFO:_master_model_container: 11
+2023-05-23 01:15:21,332:INFO:_display_container: 2
+2023-05-23 01:15:21,333:INFO:LinearDiscriminantAnalysis(covariance_estimator=None, n_components=None,
+                           priors=None, shrinkage=None, solver='svd',
+                           store_covariance=False, tol=0.0001)
+2023-05-23 01:15:21,334:INFO:create_model() successfully completed......................................
+2023-05-23 01:15:21,481:INFO:SubProcess create_model() end ==================================
+2023-05-23 01:15:21,482:INFO:Creating metrics dataframe
+2023-05-23 01:15:21,510:INFO:Initializing Extra Trees Classifier
+2023-05-23 01:15:21,511:INFO:Total runtime is 37.07785588900248 minutes
+2023-05-23 01:15:21,519:INFO:SubProcess create_model() called ==================================
+2023-05-23 01:15:21,520:INFO:Initializing create_model()
+2023-05-23 01:15:21,521:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=et, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 01:15:21,521:INFO:Checking exceptions
+2023-05-23 01:15:21,521:INFO:Importing libraries
+2023-05-23 01:15:21,521:INFO:Copying training dataset
+2023-05-23 01:15:21,795:INFO:Defining folds
+2023-05-23 01:15:21,796:INFO:Declaring metric variables
+2023-05-23 01:15:21,803:INFO:Importing untrained model
+2023-05-23 01:15:21,814:INFO:Extra Trees Classifier Imported successfully
+2023-05-23 01:15:21,836:INFO:Starting cross validation
+2023-05-23 01:15:21,850:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 01:15:32,253:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.74s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:15:32,394:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.72s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:15:33,767:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.88s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:15:33,894:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.94s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:15:44,517:INFO:Calculating mean and std
+2023-05-23 01:15:44,522:INFO:Creating metrics dataframe
+2023-05-23 01:15:45,429:INFO:Uploading results into container
+2023-05-23 01:15:45,431:INFO:Uploading model into container now
+2023-05-23 01:15:45,433:INFO:_master_model_container: 12
+2023-05-23 01:15:45,433:INFO:_display_container: 2
+2023-05-23 01:15:45,436:INFO:ExtraTreesClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+                     criterion='gini', max_depth=None, max_features='auto',
+                     max_leaf_nodes=None, max_samples=None,
+                     min_impurity_decrease=0.0, min_samples_leaf=1,
+                     min_samples_split=2, min_weight_fraction_leaf=0.0,
+                     n_estimators=100, n_jobs=-1, oob_score=False,
+                     random_state=5075, verbose=0, warm_start=False)
+2023-05-23 01:15:45,436:INFO:create_model() successfully completed......................................
+2023-05-23 01:15:45,558:INFO:SubProcess create_model() end ==================================
+2023-05-23 01:15:45,558:INFO:Creating metrics dataframe
+2023-05-23 01:15:45,586:INFO:Initializing Extreme Gradient Boosting
+2023-05-23 01:15:45,587:INFO:Total runtime is 37.4791271607081 minutes
+2023-05-23 01:15:45,596:INFO:SubProcess create_model() called ==================================
+2023-05-23 01:15:45,596:INFO:Initializing create_model()
+2023-05-23 01:15:45,597:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=xgboost, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 01:15:45,598:INFO:Checking exceptions
+2023-05-23 01:15:45,598:INFO:Importing libraries
+2023-05-23 01:15:45,598:INFO:Copying training dataset
+2023-05-23 01:15:45,815:INFO:Defining folds
+2023-05-23 01:15:45,816:INFO:Declaring metric variables
+2023-05-23 01:15:45,824:INFO:Importing untrained model
+2023-05-23 01:15:45,837:INFO:Extreme Gradient Boosting Imported successfully
+2023-05-23 01:15:45,857:INFO:Starting cross validation
+2023-05-23 01:15:45,870:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 01:40:28,440:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.52s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:40:41,296:INFO:Calculating mean and std
+2023-05-23 01:40:41,364:INFO:Creating metrics dataframe
+2023-05-23 01:40:42,303:INFO:Uploading results into container
+2023-05-23 01:40:42,308:INFO:Uploading model into container now
+2023-05-23 01:40:42,313:INFO:_master_model_container: 13
+2023-05-23 01:40:42,313:INFO:_display_container: 2
+2023-05-23 01:40:42,322:INFO:XGBClassifier(base_score=None, booster='gbtree', callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              n_estimators=100, n_jobs=-1, num_parallel_tree=None,
+              objective='binary:logistic', predictor=None, ...)
+2023-05-23 01:40:42,322:INFO:create_model() successfully completed......................................
+2023-05-23 01:40:43,381:INFO:SubProcess create_model() end ==================================
+2023-05-23 01:40:43,382:INFO:Creating metrics dataframe
+2023-05-23 01:40:43,424:INFO:Initializing Light Gradient Boosting Machine
+2023-05-23 01:40:43,424:INFO:Total runtime is 62.44307630459467 minutes
+2023-05-23 01:40:43,432:INFO:SubProcess create_model() called ==================================
+2023-05-23 01:40:43,433:INFO:Initializing create_model()
+2023-05-23 01:40:43,433:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=lightgbm, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 01:40:43,434:INFO:Checking exceptions
+2023-05-23 01:40:43,434:INFO:Importing libraries
+2023-05-23 01:40:43,435:INFO:Copying training dataset
+2023-05-23 01:40:43,790:INFO:Defining folds
+2023-05-23 01:40:43,791:INFO:Declaring metric variables
+2023-05-23 01:40:43,799:INFO:Importing untrained model
+2023-05-23 01:40:43,807:INFO:Light Gradient Boosting Machine Imported successfully
+2023-05-23 01:40:43,821:INFO:Starting cross validation
+2023-05-23 01:40:43,835:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 01:45:07,819:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 1.03s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:45:08,291:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 1.03s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:45:08,873:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.98s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-05-23 01:45:09,554:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.94s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:45:10,026:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.95s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:45:10,624:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.97s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:45:13,676:INFO:Calculating mean and std
+2023-05-23 01:45:13,730:INFO:Creating metrics dataframe
+2023-05-23 01:45:14,793:INFO:Uploading results into container
+2023-05-23 01:45:14,797:INFO:Uploading model into container now
+2023-05-23 01:45:14,801:INFO:_master_model_container: 14
+2023-05-23 01:45:14,801:INFO:_display_container: 2
+2023-05-23 01:45:14,811:INFO:LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+               importance_type='split', learning_rate=0.1, max_depth=-1,
+               min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+               n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+               random_state=5075, reg_alpha=0.0, reg_lambda=0.0, silent='warn',
+               subsample=1.0, subsample_for_bin=200000, subsample_freq=0)
+2023-05-23 01:45:14,811:INFO:create_model() successfully completed......................................
+2023-05-23 01:45:15,368:INFO:SubProcess create_model() end ==================================
+2023-05-23 01:45:15,368:INFO:Creating metrics dataframe
+2023-05-23 01:45:15,400:INFO:Initializing Dummy Classifier
+2023-05-23 01:45:15,402:INFO:Total runtime is 66.97603749831516 minutes
+2023-05-23 01:45:15,409:INFO:SubProcess create_model() called ==================================
+2023-05-23 01:45:15,410:INFO:Initializing create_model()
+2023-05-23 01:45:15,410:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=dummy, fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x0000017DC5CCFA00>, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 01:45:15,411:INFO:Checking exceptions
+2023-05-23 01:45:15,411:INFO:Importing libraries
+2023-05-23 01:45:15,412:INFO:Copying training dataset
+2023-05-23 01:45:15,806:INFO:Defining folds
+2023-05-23 01:45:15,806:INFO:Declaring metric variables
+2023-05-23 01:45:15,816:INFO:Importing untrained model
+2023-05-23 01:45:15,823:INFO:Dummy Classifier Imported successfully
+2023-05-23 01:45:15,846:INFO:Starting cross validation
+2023-05-23 01:45:15,860:INFO:Cross validating with StratifiedKFold(n_splits=3, random_state=None, shuffle=False), n_jobs=-1
+2023-05-23 01:45:17,429:WARNING:C:\Users\anya9\AppData\Roaming\Python\Python39\site-packages\pycaret\internal\pipeline.py:310: UserWarning: Persisting input arguments took 0.73s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  X, _ = self._memory_full_transform(self, X, None, with_final=False)
+
+2023-05-23 01:45:17,631:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-05-23 01:45:17,637:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-05-23 01:45:26,172:WARNING:D:\Programs\anaconda\lib\site-packages\sklearn\metrics\_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+
+2023-05-23 01:45:26,412:INFO:Calculating mean and std
+2023-05-23 01:45:26,417:INFO:Creating metrics dataframe
+2023-05-23 01:45:27,291:INFO:Uploading results into container
+2023-05-23 01:45:27,293:INFO:Uploading model into container now
+2023-05-23 01:45:27,295:INFO:_master_model_container: 15
+2023-05-23 01:45:27,295:INFO:_display_container: 2
+2023-05-23 01:45:27,296:INFO:DummyClassifier(constant=None, random_state=5075, strategy='prior')
+2023-05-23 01:45:27,296:INFO:create_model() successfully completed......................................
+2023-05-23 01:45:27,421:INFO:SubProcess create_model() end ==================================
+2023-05-23 01:45:27,421:INFO:Creating metrics dataframe
+2023-05-23 01:45:27,473:INFO:Initializing create_model()
+2023-05-23 01:45:27,474:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x0000017DCBBE3E50>, estimator=RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001), fold=StratifiedKFold(n_splits=3, random_state=None, shuffle=False), round=4, cross_validation=False, predict=False, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-05-23 01:45:27,475:INFO:Checking exceptions
+2023-05-23 01:45:27,486:INFO:Importing libraries
+2023-05-23 01:45:27,486:INFO:Copying training dataset
+2023-05-23 01:45:27,699:INFO:Defining folds
+2023-05-23 01:45:27,699:INFO:Declaring metric variables
+2023-05-23 01:45:27,699:INFO:Importing untrained model
+2023-05-23 01:45:27,700:INFO:Declaring custom model
+2023-05-23 01:45:27,700:INFO:Ridge Classifier Imported successfully
+2023-05-23 01:45:27,708:INFO:Cross validation set to False
+2023-05-23 01:45:27,709:INFO:Fitting Model
+2023-05-23 01:45:29,451:INFO:RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001)
+2023-05-23 01:45:29,451:INFO:create_model() successfully completed......................................
+2023-05-23 01:45:29,638:INFO:_master_model_container: 15
+2023-05-23 01:45:29,638:INFO:_display_container: 2
+2023-05-23 01:45:29,639:INFO:RidgeClassifier(alpha=1.0, class_weight=None, copy_X=True, fit_intercept=True,
+                max_iter=None, normalize='deprecated', positive=False,
+                random_state=5075, solver='auto', tol=0.001)
+2023-05-23 01:45:29,639:INFO:compare_models() successfully completed......................................
