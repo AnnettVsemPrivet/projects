@@ -1,2 +1,2 @@
 # projects
-[pattern_recognition](https://github.com/AnnettVsemPrivet/projects/tree/main/pattern_recognition)
+[pattern_recognition](https://github.com/AnnettVsemPrivet/projects/tree/main/pattern_recognition) (KShape, pytorch, LSTM)
