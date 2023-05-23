@@ -1,5 +1,5 @@
 print('Bot started')
-# cd jupyter\projects\emotion_classification
+# cd jupyter\projects\emotion_classification\py_modules
 # python tg_bot.py
 
 
@@ -19,7 +19,7 @@ from langchain.chat_models import ChatOpenAI
 import telebot
 
 import sys
-sys.path.append('../../../jupyter/')
+sys.path.append('../../../../jupyter/')
 from CREDS import *
 
 
