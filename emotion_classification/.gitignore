@@ -1,0 +1,8 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Jupyter NB Checkpoints
+.ipynb_checkpoints/
+
+# sensitive data from users
+bot_data/
