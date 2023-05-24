@@ -6,3 +6,6 @@ __pycache__/
 
 # sensitive data from users
 bot_data/
+
+# logs
+*.log
