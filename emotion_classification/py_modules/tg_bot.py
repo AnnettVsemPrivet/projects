@@ -10,6 +10,7 @@ import datetime
 import time
 import pandas as pd
 import json
+import numpy as np
 
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationEntityMemory
@@ -95,7 +96,28 @@ def start_message(message):
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
+    # time.sleep(np.random.choice([20,40,60]))
+    # т.к. у меня бесплатная версия, необходима пауза в 20 секунд 
+    # между запусками модели. чтобы юзеры не чувствовали что бот 
+    # сломался, распределю краткосрочное действие 'typing' между
+    # ожиданием. для перестраховки теперь время ожидания между 
+    # 24 и 40 секундами, со средним 32.
     bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(5)
+    bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(5)
+    bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(5)
+    bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(5)
+    bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(np.random.choice([1,2,3,4,5]))
+    bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(np.random.choice([1,2,3,4,5]))
+    bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(np.random.choice([1,2,3,4,5]))
+    bot.send_chat_action(message.from_user.id, 'typing')
+    time.sleep(np.random.choice([1,2,3,4,5]))
     
     # обрабатываем сообщение
     try:
@@ -108,6 +130,7 @@ def get_text_messages(message):
                                     )
         
     time_now = int(datetime.datetime.utcnow().timestamp())
+    bot.send_chat_action(message.from_user.id, 'typing')
     answer = all_convos[str(message.from_user.id)].run(input=message.text.lower())
     bot.send_message(message.from_user.id, answer)
 
@@ -124,4 +147,3 @@ def get_text_messages(message):
 
 
 bot.polling(none_stop=True)
-
