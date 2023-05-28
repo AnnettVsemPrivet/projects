@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Programs/jupyter/projects/emotion_classification/mlruns/193120833709640719/b2d7763a04144687b5743c6555462c8c/artifacts
+end_time: 1685308488021
+entry_point_name: ''
+experiment_id: '193120833709640719'
+lifecycle_stage: active
+run_id: b2d7763a04144687b5743c6555462c8c
+run_name: LogisticRegression1
+run_uuid: b2d7763a04144687b5743c6555462c8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1685308458800
+status: 3
+tags: []
+user_id: anya9
