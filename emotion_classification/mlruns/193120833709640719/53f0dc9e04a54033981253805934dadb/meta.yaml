@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Programs/jupyter/projects/emotion_classification/mlruns/193120833709640719/53f0dc9e04a54033981253805934dadb/artifacts
+end_time: 1685307383364
+entry_point_name: ''
+experiment_id: '193120833709640719'
+lifecycle_stage: active
+run_id: 53f0dc9e04a54033981253805934dadb
+run_name: LinearDiscriminantAnalysis0
+run_uuid: 53f0dc9e04a54033981253805934dadb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1685307346516
+status: 4
+tags: []
+user_id: anya9

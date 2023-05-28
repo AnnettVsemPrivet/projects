@@ -1,0 +1,6 @@
+artifact_location: file:///D:/Programs/jupyter/projects/emotion_classification/mlruns/193120833709640719
+creation_time: 1685297795206
+experiment_id: '193120833709640719'
+last_update_time: 1685297795206
+lifecycle_stage: active
+name: best_classification
