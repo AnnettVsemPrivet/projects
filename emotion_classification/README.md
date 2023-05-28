@@ -21,10 +21,10 @@
 Используя MLflow и RandomizedSearchCV ([раздел MLflow](https://github.com/AnnettVsemPrivet/projects/blob/main/emotion_classification/emotion_classification.ipynb)), 
 были подобраны оптимальные параметры для каждой модели и выбрана лучшая:
  - LinearDiscriminantAnalysis, с параметрами:
-   - 'vectorizer__stop_words': 'english'
-   - 'vectorizer__ngram_range': (1, 2)
-   - 'vectorizer__min_df': 10
-   - 'vectorizer__max_df': 0.9
-   - 'transformer__n_components': 1000
-   - 'classifier__tol': 0.0006000000000000001
+   - 'TfidfVectorizer__stop_words': 'english'
+   - 'TfidfVectorizer__ngram_range': (1, 2)
+   - 'TfidfVectorizer__min_df': 10
+   - 'TfidfVectorizer__max_df': 0.9
+   - 'TruncatedSVD__n_components': 1000
+   - 'classifier__tol': 0.0006
  - итоговое качество по валидационной выборке F1 score: 0.87
