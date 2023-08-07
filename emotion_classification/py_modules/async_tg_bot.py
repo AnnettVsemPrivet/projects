@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
 print('Bot started')
 # cd jupyter\projects\emotion_classification\py_modules
 # python tg_bot_2.py
@@ -22,8 +25,8 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 import asyncio
 
-import sys
-sys.path.append('../../../../jupyter/')
+#import sys
+#sys.path.append('../../../../jupyter/')
 from CREDS import *
 
 import itertools
