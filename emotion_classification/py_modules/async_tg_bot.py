@@ -56,7 +56,7 @@ timestamp = int(time.mktime(datetime.datetime.utcnow().date().timetuple()))
 
 # информация о юзерах (айди, имя, фамилия, ник)
 try:
-    with open('../bot_data/arr_users.json') as user_file:
+    with open('../bot_data/arr_users.json', 'w') as user_file:
         dict_users = json.load(user_file)
 except:
     dict_users = {}
@@ -64,14 +64,14 @@ except:
 # информация о диалогах (уникальный номер, отправленные и полученные сообщения, время сообщений)
 # уникальные номера разговоров - берутся по числовому номеру дня + айди юзера
 try:
-    with open('../bot_data/arr_discs.json') as user_file:
+    with open('../bot_data/arr_discs.json', 'w') as user_file:
         dict_discs = json.load(user_file)
 except:
     dict_discs = {}
 
 # отлов ошибок
 try:
-    with open('../bot_data/arr_mess.json') as user_file:
+    with open('../bot_data/arr_mess.json', 'w') as user_file:
         dict_mess = json.load(user_file)
 except:
     dict_mess = {}
@@ -118,14 +118,14 @@ async def echo_message(message: types.Message):
 
     # отлов ошибок
     try:
-        with open('../bot_data/arr_mess.json') as user_file:
+        with open('../bot_data/arr_mess.json', 'w') as user_file:
             dict_mess = json.load(user_file)
     except:
         dict_mess = {}
 
     # отлов ошибок 2
     try:
-        with open('../bot_data/arr_mess_all.json') as user_file:
+        with open('../bot_data/arr_mess_all.json', 'w') as user_file:
             dict_mess_all = json.load(user_file)
     except:
         dict_mess_all = {}
@@ -153,7 +153,7 @@ async def echo_message(message: types.Message):
     with open('../bot_data/arr_mess.json', 'w') as json_file:
         json.dump(dict_mess, json_file)
 
-    with open('../bot_data/arr_mess.json') as user_file:
+    with open('../bot_data/arr_mess.json', 'w') as user_file:
         dict_mess = json.load(user_file)
 
     all_timestamps = [x[1] for x in dict_mess[str(message.from_user.id)+'_'+str(timestamp)]]
@@ -169,7 +169,7 @@ async def echo_message(message: types.Message):
     with open('../bot_data/arr_mess_all.json', 'w') as json_file:
         json.dump(dict_mess_all, json_file)
 
-    with open('../bot_data/arr_mess_all.json') as user_file:
+    with open('../bot_data/arr_mess_all.json', 'w') as user_file:
         dict_mess_all = json.load(user_file)
 
     all_timestamps = [x[1] for x in dict_mess_all[str(timestamp)]]
