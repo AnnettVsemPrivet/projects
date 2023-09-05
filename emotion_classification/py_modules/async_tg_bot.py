@@ -21,7 +21,6 @@ from langchain.schema.messages import messages_to_dict, messages_from_dict
 from langchain.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ChatMessageHistory
-from langchain.memory.entity import SQLiteEntityStore
 
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -29,6 +28,7 @@ from aiogram.utils import executor
 
 from cccalendar import draw_colour_calendar
 from pyplutchik import plutchik
+from sqlite import CorrectedSQLiteEntityStore
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -117,7 +117,7 @@ try:
                                             prompt=ENTITY_MEMORY_CONVERSATION_TEMPLATE,
                                             memory=ConversationEntityMemory(llm=llm, k=K, 
                                                 chat_memory=ChatMessageHistory(messages=messages_from_dict(memory_lain[key])),
-                                                entity_store=SQLiteEntityStore(db_file='../bot_data/entities.db', table_name='user_'+key))
+                                                entity_store=CorrectedSQLiteEntityStore(db_file='../bot_data/entities.db', table_name='user_'+key))
                                             ) 
 except:
     memory_lain = {}
@@ -144,7 +144,7 @@ async def process_start_command(message: types.Message):
                                         llm=llm, 
                                         prompt=ENTITY_MEMORY_CONVERSATION_TEMPLATE,
                                         memory=ConversationEntityMemory(llm=llm, k=K,
-                                        entity_store=SQLiteEntityStore(db_file='../bot_data/entities.db', table_name='user_'+str(message.from_user.id)))
+                                        entity_store=CorrectedSQLiteEntityStore(db_file='../bot_data/entities.db', table_name='user_'+str(message.from_user.id)))
                                         ) 
 
     # заносим информацию в таблицу с бэкапом памяти моделей
@@ -382,7 +382,7 @@ async def echo_message(message: types.Message):
                                         llm=llm, 
                                         prompt=ENTITY_MEMORY_CONVERSATION_TEMPLATE,
                                         memory=ConversationEntityMemory(llm=llm, k=K,
-                                        entity_store=SQLiteEntityStore(db_file='../bot_data/entities.db', table_name='user_'+str(message.from_user.id)))
+                                        entity_store=CorrectedSQLiteEntityStore(db_file='../bot_data/entities.db', table_name='user_'+str(message.from_user.id)))
                                         )
 
         real_time_now = int(datetime.datetime.utcnow().timestamp())
