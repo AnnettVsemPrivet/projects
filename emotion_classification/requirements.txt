@@ -54,6 +54,7 @@ imbalanced-learn==0.11.0
 importlib-metadata==6.8.0
 importlib-resources==6.0.1
 ipykernel==6.25.2
+#ipython==8.15.0
 ipython==8.13.0
 ipywidgets==8.1.0
 itsdangerous==2.1.2
@@ -147,7 +148,8 @@ schemdraw==0.17
 scikit-base==0.5.1
 scikit-learn==1.0.2
 scikit-plot==0.3.7
-scipy==1.11.2
+#scipy==1.11.2
+scipy==1.10.1
 shapely==2.0.1
 six==1.16.0
 sktime==0.22.0
