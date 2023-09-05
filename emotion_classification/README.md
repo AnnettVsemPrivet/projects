@@ -10,7 +10,7 @@ While working on the project I've tried to train new classification model, and u
  - 'TruncatedSVD__n_components': 1000
  - 'classifier__tol': 0.0006
 
-However, despite having good quality, this model can't apprehend not so obvious negative emotions in comparison to a huggingface model which I think comes from much samller training dataset.
+However, despite having good quality, this model can't apprehend not so obvious negative emotions in comparison to a huggingface model which I think comes from much smaller training dataset.
 
 The future of this project is to test a hypothesis that an improvement in mood by the end of conversation with bot has a positive impact on user's Retention Rate.
 
